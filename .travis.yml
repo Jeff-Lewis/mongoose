@@ -7,7 +7,4 @@ node_js:
   - "iojs"
 services:
   - mongodb
-before_install:
-  - pip install codecov
-after_success:
-  - codecov
+script: make test-codecov.io

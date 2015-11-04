@@ -77,3 +77,8 @@ browser_debug:
 
 test_browser:
 	./node_modules/karma/bin/karma start karma.local.conf.js
+
+test-codecov.io:
+    @NODE_ENV=test ./node_modules/.bin/istanbul cover \
+    ./node_modules/mocha/bin/_mocha -- -R spec && \
+        cat ./coverage/coverage.json | ./bin/codecov.io.js --verbose
